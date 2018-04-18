@@ -1,0 +1,128 @@
+.jobInformation {
+  background: $blue;
+
+  &__case {
+    @extend .case;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    box-sizing: border-box;
+    width: 50%;
+    margin-bottom: 60px;
+    padding-right: 60px;
+    display: flex;
+    align-items: center;
+
+    @include respond-to("tabletPortrait") {
+      flex-direction: column;
+    }
+
+    @include respond-to("phablet") {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  &__image {
+    width: 160px;
+    height: 160px;
+    min-width: 160px;
+    background: $greyLight;
+    border-radius: 50%;
+    margin-right: 40px;
+
+    @include respond-to("tabletPortrait") {
+      margin: 0 0 10px 0;
+    }
+  }
+
+  &__label {
+    @include ProximaNova("bold");
+    font-size: 24px;
+    line-height: 1.3em;
+    color: $dark;
+
+    @include respond-to("phablet") {
+      text-align: center;
+    }
+  }
+
+  &__paycheck {
+    &Items {
+      display: flex;
+      justify-content: center;
+
+      @include respond-to("tabletPortrait") {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      @include respond-to("phablet") {
+        display: block;
+      }
+    }
+
+    &Item {
+      min-width: 334px;
+      padding: 40px;
+      margin: 0 20px;
+      border: 1px solid rgba($dark, 0.2);
+
+      @include respond-to("tabletPortrait") {
+        margin-bottom: 20px;
+        max-width: 340px;
+      }
+
+      @include respond-to("phablet") {
+        max-width: none;
+        min-width: auto;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    &Count {
+      @include ProximaNova("extraBold");
+      font-size: 60px;
+      color: $dark;
+      text-align: center;
+
+      @include respond-to("phablet") {
+        font-size: 48px;
+      }
+    }
+
+    &Label {
+      @include ProximaNova();
+      font-size: 24px;
+      color: $dark;
+      text-align: center;
+    }
+
+    &Source {
+      padding-top: 50px;
+      @include ProximaNova();
+      font-size: 20px;
+      color: $dark;
+      text-align: center;
+    }
+
+    &Hh {
+      width: 60px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+  }
+}

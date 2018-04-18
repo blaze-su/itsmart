@@ -1,0 +1,20 @@
+section.registration
+    .registration__case
+        .registration__success
+            h2.registration__title Заявка отправлена
+
+        h2.registration__title Записаться на пробный урок
+        .registration__errors
+        .registration__fields
+            input.registration__input(type="text" name="NAME" placeholder="Ваше имя" value="Александр Сидоров")
+            input.registration__input.phone__masked(type="text" name="PHONE" placeholder="+7 (...) ...-..-.." value="+79284334445")
+            input.registration__input(type="text" name="EMAIL" placeholder="E-mail" value="sede@inbox.ru")
+            input.registration__input(type="hidden" name="DATE" value="17.01.2018 18:00")
+            input.registration__input(type="hidden" name="UTM_SOURCE" value="direct")
+            input.registration__input(type="hidden" name="SOURCE" value="?kkkkk")
+            input.registration__input(type="hidden" name="FORM" value="events")
+            button.registration__btn.button Записаться
+
+        input.registration__checkbox(type="checkbox" name="name" value="name" checked="checked")
+        .registration__agreement Согласен на обработку персональных данных.
+            a.registration__agreementLink(href="#") Посмотреть соглашение

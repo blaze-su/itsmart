@@ -1,0 +1,89 @@
+.contacts {
+  @extend .case;
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+
+  &__case {
+    display: flex;
+    justify-content: space-between;
+
+    @include debug(red);
+
+    @include respond-to("tabletPortrait") {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__items {
+    width: 55%;
+    margin-right: 40px;
+
+    @include debug(green);
+
+    @include respond-to("tabletPortrait") {
+      width: auto;
+      margin: 20px 0 0 0;
+    }
+  }
+
+  &__item {
+    display: flex;
+
+    @include respond-to("phablet") {
+      display: block;
+    }
+  }
+
+  &__image {
+    width: 190px;
+    height: 190px;
+    min-width: 190px;
+    border-radius: 50%;
+    background: $dark;
+    margin-right: 40px;
+
+    @include respond-to("phablet") {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__name {
+    @include ProximaNova("bold");
+    font-size: 36px;
+    color: $dark;
+    margin-bottom: 10px;
+  }
+
+  &__position {
+    @include ProximaNova();
+    font-size: 20px;
+    color: $dark;
+    margin-bottom: 30px;
+  }
+
+  &__phone {
+    @include ProximaNova("bold");
+    font-size: 30px;
+    color: $dark;
+    margin-bottom: 10px;
+  }
+
+  &__email {
+    @include ProximaNova();
+    font-size: 20px;
+    color: $dark;
+  }
+
+
+  &__map {
+    width: 45%;
+    height: 338px;
+
+    @include debug(yellow);
+
+    @include respond-to("tabletPortrait") {
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,189 @@
+.footer {
+  background: $darkBlue;
+
+  &__icon {
+    margin-right: 10px;
+    position: absolute;
+    top: 2px;
+    left: 0;
+  }
+
+  span {
+    @include ProximaNova("light");
+    font-size: 20px;
+    color: $blue;
+  }
+
+
+  &__case {
+    @extend .case;
+    padding-top: 45px;
+    padding-bottom: 45px;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: $grey;
+
+
+    @include respond-to("phablet") {
+      display: block;
+      padding: 35px;
+    }
+  }
+
+  &__contacts {
+    width: 330px;
+
+    @include respond-to("phablet") {
+      width: auto;
+      margin-bottom: 35px;
+    }
+
+  }
+
+  &__phone, &__schedule, &__address {
+    display: block;
+    @include ProximaNova("light");
+    font-size: 18px;
+    color: $grey;
+
+    margin-bottom: 20px;
+    padding-left: 22px;
+    position: relative;
+  }
+
+  &__address {
+    line-height: 1.5em;
+    margin-bottom: 0;
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 330px;
+
+    @include respond-to("tabletPortrait") {
+      display: none;
+    }
+
+    @include respond-to("phablet") {
+      display: flex;
+      width: auto;
+      margin-bottom: 35px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    margin: 0 5px;
+    border: 1px solid #393f50;
+    text-decoration: none;
+
+    &:hover {
+      border-color: $grey;
+
+      i {
+        color: $grey;
+      }
+    }
+
+
+    &Icon {
+      color: #3e4859;
+      font-size: 32px;
+    }
+  }
+
+
+
+  &__subscription {
+    width: 330px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    @include respond-to("phablet") {
+      display: block;
+      height: auto;
+      width: auto;
+    }
+
+    &Case {
+      height: 60px;
+      border: solid 1px #4b5263;
+      display: flex;
+
+    }
+
+    &Email {
+      width: 90%;
+      background: none;
+      border: none;
+      border-right: 1px solid #4b5263;
+      outline: none;
+    }
+
+    &Btn {
+      width: 60px;
+      background: none;
+      border: none;
+
+      i {
+        color: #3e4859;
+        font-size: 32px;
+      }
+    }
+
+    &Title {
+      @include ProximaNova("light");
+      font-size: 20px;
+      color: $blue;
+      line-height: 1.5em;
+
+      @include respond-to("phablet") {
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__bottom {
+    background: #1f2433;
+
+    &Case {
+      @extend .case;
+      display: flex;
+      justify-content: space-between;
+
+      height: 61px;
+
+      @include ProximaNova("light");
+      font-size: 15px;
+      color: #6f757a;
+
+      @include respond-to("phablet") {
+        display: block;
+        height: auto;
+        padding: 20px 0 40px;
+      }
+    }
+  }
+
+  &__agreement, &__copyright, &__made {
+    display: flex;
+    align-items: center;
+
+    @include respond-to("phablet") {
+      justify-content: center;
+      min-height: 36px;
+    }
+  }
+}

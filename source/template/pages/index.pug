@@ -1,0 +1,222 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title #{title}
+        meta(content="a.sidorov" name="author")
+        meta(content="" name="description")
+        meta(content="" name="keywords")
+        meta(content="width=device-width, initial-scale=1" name="viewport")
+        meta(content="ie=edge" http-equiv="x-ua-compatible")
+
+        //- favicon block start
+        //- favicon block end
+
+        link(rel='stylesheet' href='/assets/css/foundation.css')
+        link(rel='stylesheet' href='/assets/css/app.css')
+
+        <!--[if lt IE 9]>
+        script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+        <![endif]-->
+
+    body
+        include ../common/_header.pug
+        include ../common/_keyvisual.pug
+
+
+        section.directions
+            -
+                var directions = ["до 14 лет", "Программирование", "Дизайн", "Маркетинг"]
+
+            each direction in directions
+                .directions__items
+                    .directions__picture
+                        img(src="/assets/img/svg/directions/design.svg")
+                    a.directions__title= direction
+
+        section.events
+            h2 Мероприятия
+
+
+            .events__slider
+                .sliderControl.events__sliderControl
+
+                .events__items.owl-carousel.owl-theme
+                    .events__item
+                        img(src="../assets/img/events/design.jpg")
+                    .events__item
+                        img(src="../assets/img/events/design.jpg")
+                    .events__item
+                        img(src="../assets/img/events/design.jpg")
+                    .events__item
+                        img(src="../assets/img/events/design.jpg")
+
+        section.carrer
+            h2 Карьерная лестница
+
+            .carrer__items
+                -
+                    var years = [
+                        {
+                            title: "9 лет",
+                            items: [ {
+                                svg: "",
+                                title: "МКА-1",
+                                description: "ПК",
+                                url: ""
+                            }
+                            ]
+                        },
+                        {
+                        title: "10 лет",
+                        items: [ {
+                        svg: "",
+                        title: "МКА-2",
+                        description: "Робототехника",
+                        url: ""
+                        },
+                        {
+                        svg: "",
+                        title: "МКА-3",
+                        description: "Разработка сайтов",
+                        url: ""
+                        }
+                        ]
+                        },
+                        {
+                        title: "12 лет",
+                        items: [ {
+                        svg: "",
+                        title: "МКА-4",
+                        description: "YouTube",
+                        url: ""
+                        },
+                        {
+                        svg: "",
+                        title: "МКА-5",
+                        description: "3D печать",
+                        url: ""
+                        }
+                        ]
+                        },
+                        {
+                        title: "14 лет",
+                        items: [ {
+                        svg: "",
+                        title: "Создание сайтов",
+                        description: "",
+                        url: ""
+                        },
+                        {
+                        svg: "",
+                        title: "Интернет маркетинг",
+                        description: "",
+                        url: ""
+                        },
+                        {
+                        svg: "",
+                        title: "Unity 3D",
+                        description: "",
+                        url: ""
+                        }
+                        ]
+                        },
+                        {
+                        title: "15+ лет",
+                        items: [ {
+                        svg: "",
+                        title: "Графика и дизайн",
+                        description: "",
+                        url: ""
+                        },
+                        {
+                        svg: "",
+                        title: "Сети и кибербезо- пасность",
+                        description: "",
+                        url: ""
+                        },
+                        {
+                        svg: "",
+                        title: "Разработка програмного обеспечения",
+                        description: "",
+                        url: ""
+                        }
+                        ]
+                        }
+                    ];
+
+                each year in years
+                    .carrer__item
+                        .carrer__year= year.title
+                        .carrer__programms
+                            each program in year.items
+                                .carrer__programm
+                                    .carrer__svg
+                                    .carrer__caption
+                                        .carrer__title= program.title
+                                        if program.description
+                                            .carrer__description= program.description
+
+
+        section.complex
+            h2.case Комплекные программы
+            .complex__tabs
+                .complex__tab.complex__tab__active Профессиональные программы
+                .complex__tab Малая компьютерная академия
+
+            .caseBlue
+                - var i = 0;
+                .complexItems
+                    while i++ < 3
+                        .complexItem
+
+                            .complexItem__availability
+                                .complexItem__level(title = "Уровень сложности") Новичок
+                                .complexItem__person(title = "Доступно мест")
+                                    i.fa.fa-user.complexItem__personIcon &nbsp;
+                                    | 3
+
+                            .complexItem__title Базаовый курс HTML-верстка
+                            .complexItem__description Вы сможете верстать страницы практически любой сложности. Узнаете, как работать с чужим кодом и правильно публиковать сайты в сети, соберёте портфолио из 2 сайтов и выполните больше 200 учебных заданий.
+
+                            .complexItem__bottom
+                                section
+                                    .complexItem__date
+                                        i.fa.fa-calendar.complexItem__icon
+                                        span
+                                            | Блажайщий курс:&nbsp;
+                                            b 9 октября 2017
+
+                                    .complexItem__about
+                                        i.fa.fa-clock-o.complexItem__icon
+                                        span
+                                            b 15&nbsp;
+                                            | занятий,&nbsp;
+                                        span
+                                            b 45&nbsp;
+                                            | часов,&nbsp;
+                                        span
+                                            b 5&nbsp;
+                                            | преподавателей
+
+                                a.complexItem__btn Подробно
+                            .complexItem__detail
+                                img(src="/assets/img/svg/arrows/arrows__up.svg")
+
+        include ../common/_registration.pug
+        include ../common/_reviews.pug
+
+
+        section.partners
+            h2 Партнеры
+
+            - var i = 0;
+            .partners__items
+                while i++ < 8
+                    .partners__item
+                        .partners__logotype
+                            img(src="/assets/img/partners/_adobe.png")
+
+
+
+        include ../common/_footer

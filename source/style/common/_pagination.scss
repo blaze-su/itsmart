@@ -1,0 +1,25 @@
+.pagination {
+  @extend .case;
+  display: flex;
+  margin-bottom: 40px;
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    border: 1px solid #1c273b;
+    margin-right: -1px;
+    @include ProximaNova();
+    font-size: 24px;
+    color: $dark;
+
+    &:hover {
+      color: $white;
+      background: #E61A8B;
+      border-color: #E61A8B;;
+    }
+  }
+}

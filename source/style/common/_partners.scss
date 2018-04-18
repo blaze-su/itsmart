@@ -1,0 +1,65 @@
+.partners {
+  @extend .case;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+
+  @include respond-to("iPhone") {
+    padding: 50px 35px;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 1px solid #e9eaeb;
+    background: $white;
+    width: 25%;
+
+
+    @include respond-to("phablet") {
+      width: 50%;
+      height: 100px;
+    }
+  }
+
+
+  &__logotype {
+    padding: 70px;
+
+    @include respond-to("iPad") {
+      padding: 40px;
+    }
+
+    @include respond-to("iPhone") {
+      padding: 20px;
+    }
+
+    /*
+    width: 180px;
+    height: 180px;
+
+    border: 1px dashed $grey;
+    */
+    img {
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      transition: filter 0.5s ease;
+      -webkit-transition: filter 0.5s ease;
+      width: 100%;
+
+      &:hover {
+        filter: grayscale(0%);
+        -webkit-filter: grayscale(0%);
+      }
+    }
+  }
+
+}

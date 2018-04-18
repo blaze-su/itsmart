@@ -1,0 +1,38 @@
+extends ../_template
+
+block variables
+  - var title = 'Мероприятия'
+
+block content
+  include ../common/_header.pug
+
+  .blog
+    h1 Блог
+
+    .blog__tabs
+      .blog__tabsCase
+        .blog__tab.blog__tab__active Маркетинг
+        .blog__tab Web-программирование
+        .blog__tab Design
+        .blog__tab МКА
+
+    - var i = 0;
+    .blog__items
+        while i++ < 8
+          .blog__item
+            .blog__image
+            .blog__description
+              a.blog__title Разработка приложений React Native
+              .blog__date
+                i.fa.fa-calendar.blog__icon
+                span 13.11.2018
+              .blog__author
+                i.fa.fa-user.blog__icon
+                span Сидоров Александр
+
+    .blog__showMore
+      button.blog__btn.button Смотреть еще
+
+
+  include ../common/_footer.pug
+

@@ -1,0 +1,38 @@
+.bredcrumbs {
+  @extend .case;
+
+  margin-top: 20px;
+  margin-bottom: 100px;
+
+  &__link {
+    position: relative;
+    @include ProximaNova("light");
+    font-size: 16px;
+    text-decoration: none;
+    color: $grey;
+    padding-right: 15px;
+    margin-right: 10px;
+
+    &:before {
+
+      position: absolute;
+      top: 2px;
+      bottom: 0;
+      right: 0;
+      content: " ";
+      width: 7px;
+
+      background: url("/assets/img/svg/arrows/arrows__right.svg") no-repeat left center;
+    }
+
+
+    &__current {
+      color: $dark;
+
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+}

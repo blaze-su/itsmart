@@ -1,0 +1,69 @@
+.course {
+  @extend .case;
+  box-sizing: border-box;
+  background: $white;
+  padding: 60px 60px;
+  margin-top: -140px;
+
+  @include respond-to("phablet") {
+    padding: 40px 35px;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    text-align: center;
+    @include ProximaNova("light");
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+
+  &__items {
+    display: flex;
+
+    @include respond-to("tabletPortrait") {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @include respond-to("phablet") {
+      flex-direction: column;
+      align-items: center;
+    }
+
+  }
+
+  &__item {
+    width: 25%;
+
+    @include respond-to("tabletPortrait") {
+      width: 30%;
+      margin-bottom: 40px;
+    }
+
+    @include respond-to("phablet") {
+      width: auto;
+    }
+  }
+
+  &__count {
+    @include ProximaNova("extraBold");
+    font-size: 120px;
+    color: $pink;
+    text-align: center;
+
+    @include respond-to("iPad") {
+      font-size: 100px;
+    }
+  }
+
+  &__label {
+    @include ProximaNova();
+    color: $dark;
+    font-size: 24px;
+    text-align: center;
+  }
+}

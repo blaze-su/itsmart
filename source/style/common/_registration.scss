@@ -1,0 +1,141 @@
+.registration {
+  @extend .case;
+
+  padding-top: 60px;
+  padding-bottom: 80px;
+
+
+  @include respond-to("tabletPortrait") {
+    padding: 60px 0 0 0;
+  }
+
+  @include respond-to("phablet") {
+    padding: 0;
+    margin-bottom: 1px;
+  }
+
+  &__case {
+    position: relative;
+  }
+
+  &__success {
+    visibility: hidden;
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+
+  &__errors {
+    display: none;
+    @include ProximaNova("light");
+    font-size: 18px;
+    color: red;
+    margin: 0 0 10px 0;
+  }
+
+  &__title {
+    padding: 0;
+    color: $blue;
+  }
+
+  &__case {
+    padding: 80px 80px;
+    background: $darkBlue;
+
+
+    @include respond-to("tabletPortrait") {
+      padding: 80px 35px;
+    }
+
+    @include respond-to("phablet") {
+      padding: 35px;
+    }
+  }
+
+  &__fields {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-content: stretch;
+    margin-bottom: 30px;
+
+    @include respond-to("phablet") {
+      display: block;
+      height: auto;
+    }
+  }
+
+  &__input {
+    width: 25%;
+    @include ProximaNova("light");
+    font-size: 20px;
+    color: $greyLight;
+    padding: 0 24px 0 24px;
+    margin: 0 10px 0 0;
+    border: none;
+
+    @include respond-to("phablet") {
+      height: 60px;
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0 0 10px 0;
+
+    }
+  }
+
+
+  &__btn {
+    position: relative;
+    width: 25%;
+    @include ProximaNova("light");
+    font-size: 22px;
+    color: $white;
+    text-align: left;
+    padding: 15px 24px;
+    background: $pink;
+    border: none;
+    border-radius: 0;
+
+    @include respond-to("phablet") {
+      width: 100%;
+    }
+
+    &:before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      content: " ";
+      width: 25px;
+      background: url("/assets/img/svg/arrows/arrows__left__white.svg") no-repeat left center;
+    }
+
+    @include respond-to("tabletPortrait") {
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &__agreement {
+    display: inline-block;
+    margin: 0 0 0 10px;
+    @include ProximaNova("light");
+    font-size: 18px;
+    color: $grey;
+
+    &Link {
+      margin-left: 10px;
+      @include ProximaNova("light");
+      font-size: 18px;
+      color: $grey;
+    }
+  }
+}

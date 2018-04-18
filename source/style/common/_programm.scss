@@ -1,0 +1,262 @@
+.programm {
+  padding: 100px 0;
+
+  h2 {
+    @extend .case;
+    margin-bottom: 50px;
+  }
+
+  .description {
+    @extend .case;
+    margin-bottom: 50px;
+  }
+
+  &__tabs {
+    position: relative;
+    margin-bottom: 40px;
+
+    &:before {
+      position: absolute;
+      content: " ";
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: $blue;
+      height: 1px;
+      z-index: 0;
+    }
+
+    &Case {
+      display: flex;
+      @extend .case;
+
+      @include respond-to("phablet") {
+        display: block;
+      }
+    }
+  }
+
+  &__tab {
+    box-sizing: border-box;
+    border: 1px solid $blue;
+    padding: 15px 40px;
+    @include ProximaNova();
+    font-size: 24px;
+    color: $dark;
+    text-align: center;
+    background: $blue;
+
+    @include respond-to("phablet") {
+      font-size: 18px;
+      text-align: left;
+    }
+
+    &__active {
+      background: $white;
+      border-bottom-color: $white;
+      z-index: 10;
+    }
+  }
+
+  &__items {
+    display: none;
+    @extend .case;
+  }
+
+  &__item {
+    border: 1px solid $light;
+    box-sizing: border-box;
+    padding: 60px 80px;
+    margin-top: 20px;
+    display: flex;
+
+    @include respond-to("tabletPortrait") {
+      padding: 40px;
+    }
+
+    @include respond-to("phablet") {
+      display: block;
+      margin-right: -35px;
+      margin-left: -35px;
+    }
+  }
+
+  &__number {
+    @include ProximaNova("extraBold");
+    font-size: 120px;
+    color: $dark;
+    line-height: 0.8em;
+    margin-right: 50px;
+
+    @include respond-to("phablet") {
+      display: inline-block;
+    }
+  }
+
+  &__year {
+    @include ProximaNova("bold");
+    font-size: 36px;
+    color: $dark;
+    margin-top: -20px;
+
+    @include respond-to("phablet") {
+      display: inline-block;
+      margin-left: -20px;
+    }
+  }
+
+  &__case {
+    width: 100%;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    @include respond-to("phablet") {
+      display: block;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    @include ProximaNova("bold");
+    font-size: 36px;
+    color: $dark;
+    margin-bottom: 20px;
+
+    &Item {
+      @include ProximaNova("bold");
+      font-size: 36px;
+      color: $dark;
+      margin-bottom: 10px;
+
+      @include respond-to("tabletPortrait") {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__level {
+    @include ProximaNova("light");
+    font-size: 24px;
+    color: $dark;
+  }
+
+  &__price {
+    @include HelveticaNeue();
+    font-size: 36px;
+    color: $dark;
+    text-align: right;
+
+    span {
+      @include ProximaNova();
+      font-size: 24px;
+      display: block;
+      margin-bottom: 5px;
+
+      @include respond-to("tabletPortrait") {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__description {
+    @include ProximaNova();
+    font-size: 24px;
+    color: $dark;
+    max-width: 730px;
+
+
+    @include respond-to("phablet") {
+      display: none;
+    }
+  }
+
+  &__bottom {
+    margin-top: 50px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+
+    @include respond-to("iPad") {
+      display: block;
+    }
+
+    @include respond-to("phablet") {
+      margin-bottom: 0;
+    }
+  }
+
+  &__date, &__about {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+
+    @include ProximaNova();
+    font-size: 24px;
+    color: $dark;
+
+    b {
+      @include ProximaNova("bold");
+    }
+
+    @include respond-to("phablet") {
+      span {
+        font-size: 18px;
+        display: inline-block;
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    font-size: 20px;
+    top: 2px;
+    left: 0;
+
+    @include respond-to("phablet") {
+      font-size: 18px;
+    }
+  }
+
+  &__btn {
+    box-sizing: border-box;
+    min-width: 240px;
+
+    @include respond-to("iPad") {
+      margin-top: 20px;
+      max-width: 240px;
+    }
+  }
+
+  &__detail {
+    text-align: center;
+    width: 100%;
+
+    &Text {
+      display:none;
+      p {
+        @include ProximaNova();
+        font-size: 24px;
+        color: $dark;
+        line-height: 1.4em;
+        text-align: left;
+      }
+
+      b {
+        @include ProximaNova("bold");
+        font-size: 24px;
+      }
+    }
+
+    @include respond-to("phablet") {
+      display: none;
+    }
+  }
+
+
+
+}

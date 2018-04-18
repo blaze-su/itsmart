@@ -1,0 +1,114 @@
+.eventsList {
+  @extend .case;
+
+
+  &__h1 {
+
+  }
+
+  &__item {
+    display: flex;
+    margin-bottom: 100px;
+
+    @include respond-to("phablet") {
+      display: block;
+    }
+  }
+
+  &__case {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+
+    @include respond-to("desktop") {
+      display: block;
+      width: 50%;
+    }
+
+    @include respond-to("phablet") {
+      width: auto;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    @include respond-to("desktop") {
+      display: block;
+    }
+  }
+
+
+  &__img {
+    height: 316px;
+    width: 464px;
+    min-width: 464px;
+    margin-right: 60px;
+
+    img {
+      width: 100%;
+    }
+
+    @include respond-to("iPad") {
+      margin-right: 40px;
+      width: 50%;
+      height: 240px;
+      min-width: inherit;
+    }
+
+    @include respond-to("phablet") {
+      width: auto;
+      margin: 0 0 20px 0;
+    }
+
+  }
+
+  &__title {
+    @include ProximaNova("bold");
+    font-size: 36px;
+    color: $dark;
+    margin-bottom: 20px;
+    text-decoration: none;
+
+    @include respond-to("tabletPortrait") {
+      font-size: 28px;
+    }
+  }
+
+  &__description {
+    @include ProximaNova();
+    font-size: 24px;
+    color: $dark;
+
+    @include respond-to("desktop") {
+      display: none;
+    }
+  }
+
+  &__date {
+    @include ProximaNova("semibold");
+    display: block;
+    font-size: 24px;
+    color: $dark;
+
+    @include respond-to("desktop") {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__btn {
+    display: block;
+    max-width: 240px;
+    text-decoration: none;
+  }
+
+  &__icon {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+
+
+}

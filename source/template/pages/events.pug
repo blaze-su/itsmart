@@ -1,0 +1,33 @@
+extends ../_template
+
+block variables
+  - var title = 'Мероприятия'
+
+block content
+  include ../common/_header.pug
+  include ../common/_bredcrumbs.pug
+
+  .eventsList
+    h1 Мероприятия
+    - var i = 0;
+    while i++ < 6
+        .eventsList__item
+          .eventsList__img
+            img(src="../assets/img/events/design.jpg")
+
+          .eventsList__case
+            .eventsList__preview
+              .eventsList__title Бесплатный семинар “Landing на миллион”
+              .eventsList__description 25 ноября в 12:00 в Академии ШАГ пройдет бесплатный семинар «Лендинг на миллион». Спикер семинара — Александр Сидоров, руководитель веб-студии, сертифицированный тренер CRM Bitrix24, ментор. Он расскажет об этапах создания…
+
+            .eventsList__bottom
+              .eventsList__date
+                i.fa.fa-calendar.eventsList__icon
+                span 14 Ноября 2017
+              a.button.eventsList__btn Читать далее
+
+
+
+  include ../common/_pagination.pug
+  include ../common/_footer.pug
+

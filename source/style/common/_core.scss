@@ -1,0 +1,229 @@
+@import '_color';
+@import '_fonts';
+
+@mixin debug($color: red) {
+  outline: 1px dashed $color
+}
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin respond-to($point) {
+  @if $point == "desktop" {
+  @media (max-width: 1280px) {
+    @content
+  }
+}
+
+  @else if $point == "iPad" {
+  @media (max-width: 1024px) {
+    @content
+  }
+}
+
+  @else if $point == "tabletPortrait" {
+  @media (max-width: 768px) {
+    @content
+  }
+}
+
+  @else if $point == "phablet" {
+    @media (max-width: 414px) {
+      @content
+    }
+  }
+
+  @else if $point == "iPhone" {
+    @media (max-width: 375px) {
+      @content
+    }
+  }
+
+  @else if $point == "phone" {
+    @media (max-width: 320px) {
+      @content
+    }
+  }
+
+}
+
+.case {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+
+  /* @include debug(blue); */
+
+  @include respond-to("desktop") {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+}
+
+* {
+  @include ProximaNova();
+}
+
+
+
+h1, h2 {
+  @include ProximaNova("extraBold");
+  font-size: 60px;
+  color: $dark;
+  margin: 0 0 50px 0;
+
+
+  @include respond-to("desktop") {
+    font-size: 52px;
+  }
+
+  @include respond-to("tabletPortrait") {
+    font-size: 48px;
+  }
+
+  @include respond-to("phablet") {
+    font-size: 32px;
+    margin: 0 0 25px 0;
+  }
+
+  @include respond-to("iPhone") {
+    font-size: 28px;
+    margin: 0 0 25px 0;
+  }
+
+  @include respond-to("phone") {
+    font-size: 24px;
+  }
+}
+
+.margin__short {
+  margin-bottom: 10px;
+}
+
+.description {
+  @include ProximaNova("light");
+  font-size: 30px;
+  color: $dark;
+  margin-bottom: 50px;
+
+  @include respond-to("desktop") {
+
+  }
+
+  @include respond-to("tabletPortrait") {
+    font-size: 24px;
+  }
+
+  @include respond-to("phablet") {
+    font-size: 20px;
+    margin: 0 0 25px 0;
+  }
+
+  @include respond-to("iPhone") {
+    font-size: 18px;
+    margin: 0 0 25px 0;
+  }
+
+  @include respond-to("phone") {
+    font-size: 16px;
+  }
+}
+
+
+
+.caseBlue {
+  background: $blue;
+}
+
+.sliderControl {
+  position: absolute;
+  right: 0;
+  top: -120px;
+
+  display: flex;
+  align-items: stretch;
+
+  width: 120px;
+  height: 60px;
+
+  @include respond-to("phablet") {
+    display: none;
+  }
+
+  &__next, &__prev, .owl-prev, .owl-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 1px solid #1c273b;
+    width: 50%;
+
+    &:hover {
+      background: $pink;
+    }
+  }
+
+  &__next, .owl-next {
+    border-left: none;
+    background: $white;
+  }
+}
+
+
+
+.input {
+  @include ProximaNova("light");
+  font-size: 20px;
+  color: $greyLight;
+  padding: 0 24px 0 24px;
+  margin: 0 10px 0 0;
+  border: none;
+
+  &__error {
+    background: #FFCDD2;
+  }
+}
+
+.button {
+  position: relative;
+  @include ProximaNova();
+  font-size: 22px;
+  color: $dark;
+  padding: 15px 47px 15px 24px;
+  border: 1px solid $dark;
+  border-radius: 0;
+  background: $white;
+  text-decoration: none;
+
+  &:before {
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 20px;
+    content: " ";
+    width: 7px;
+
+    background: url("/assets/img/svg/arrows/arrows__right.svg") no-repeat left center;
+  }
+
+  &:hover {
+    color: $white;
+    background: $pink;
+    border-color: $pink;
+
+    &:before {
+      background: url("/assets/img/svg/arrows/arrows__right__white.svg") no-repeat left center;
+    }
+  }
+}
+

@@ -1,0 +1,137 @@
+.carrer {
+  @extend .case;
+  padding-top: 100px;
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+
+    @include respond-to("phablet") {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    width: 20%;
+    border-left: 1px solid rgba($dark, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: $dark;
+
+    @include respond-to("phablet") {
+      width: auto;
+      margin: 0 -35px;
+      border: none;
+    }
+  }
+
+  &__year {
+    position: relative;
+    @include ProximaNova("bold");
+    font-size: 36px;
+    text-align: center;
+
+
+    &:after {
+      display: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      content: " ";
+      width: 25px;
+      background: url("/assets/img/svg/arrows/arrows__left.svg") no-repeat left center;
+
+      @include respond-to("phablet") {
+        display: block;
+      }
+    }
+
+    @include respond-to("phablet") {
+      padding: 15px 35px;
+      border: 1px solid rgba($greyLight, 0.15);
+      font-size: 20px;
+      text-align: left;
+    }
+  }
+
+  &__programms {
+    text-align: center;
+
+    @include respond-to("phablet") {
+      text-align: left;
+      display: none;
+    }
+  }
+
+  &__programm {
+    display: inline-block;
+    margin: 25px 0 0 0;
+    text-align: center;
+    max-width: 160px;
+    width: 100%;
+    height: 195px;
+
+    @include respond-to("phablet") {
+      display: flex;
+      max-width: none;
+      height: auto;
+      align-items: center;
+      margin: 15px 0;
+      padding: 0 35px;
+    }
+  }
+
+  &__caption {
+    padding-left: 10px;
+  }
+
+  &__svg {
+    display: inline-block;
+    width: 96px;
+    height: 96px;
+    min-width: 96px;
+    margin: 0 0 14px 0;
+
+    @include respond-to("iPhone") {
+      margin: 0;
+      width: 60px;
+      height: 60px;
+      min-width: 60px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    @include ProximaNova();
+    font-size: 24px;
+
+
+    @include respond-to("tabletPortrait") {
+      font-size: 20px;
+    }
+
+    @include respond-to("phablet") {
+      text-align: left;
+      font-size: 18px;
+      width: 100%;
+    }
+  }
+
+  &__description {
+    @include ProximaNova();
+    font-size: 16px;
+    text-align: center;
+
+    @include respond-to("phablet") {
+      text-align: left;
+      width: 100%;
+    }
+  }
+}

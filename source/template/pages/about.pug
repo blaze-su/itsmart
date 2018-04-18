@@ -1,0 +1,103 @@
+extends ../_template
+
+block variables
+  - var title = 'Мероприятия'
+
+block content
+  include ../common/_header.pug
+  include ../common/_keyvisual.pug
+
+
+  section.benefit
+
+    h2.margin__short Кто мы такие
+    .description Наша цель развивать ИТ сообщество, помогать людям осваивать современные технологии и приобретать достойную работу
+
+    .benefit__items
+      .benefit__item
+        .benefit__picture
+        .benefit__label Преподаватели практики
+      .benefit__item
+        .benefit__picture
+        .benefit__label Актуальные технлогии
+      .benefit__item
+        .benefit__picture
+        .benefit__label Максимальное погружение
+
+  section.team
+    h2 Команда
+
+    .team__tabs
+      .team__tabsCase
+        .team__tab.team__tab__active Штаб
+        .team__tab Команда
+
+    .team__items
+      -
+        var i = 0;
+      while i++ < 8
+        .team__item
+          .team__photo
+
+
+  section.demand
+    .demand__case
+      h2 Хочешь преподавать?
+      .description Наших будующих преподавателей ждут приятные условия
+
+      .demand__form
+        .demand__detail
+          .demand__conditions
+            .demand__conditionsItems
+              .demand__conditionsItem
+                .demand__conditionsImage
+                .demand__conditionsLabel Удобный график
+              .demand__conditionsItem
+                .demand__conditionsImage
+                .demand__conditionsLabel Достойная зарплата
+              .demand__conditionsItem
+                .demand__conditionsImage
+                .demand__conditionsLabel Помощь в разработке методических материалов
+              .demand__conditionsItem
+                .demand__conditionsImage
+                .demand__conditionsLabel Бесплатное обучение и тренеровка в выступлениях
+
+
+        .demand__person
+          .demand__title Личные данные
+
+          input.demand__input(type="text" name="name" value="Имя")
+          input.demand__input(type="text" name="name" value="Фамилия")
+          input.demand__input(type="text" name="name" value="Компания")
+          input.demand__input(type="text" name="name" value="+7 (...) ..-..-...")
+          input.demand__input(type="text" name="name" value="E-mail")
+
+
+          .demand__agreement
+            input.demand__agreementCheckbox(type="checkbox" name="name" value="name")
+            label Согласен на обработку персональных данных.&nbsp;
+              a.demand__agreementLink(href="#") Посмотреть соглашение
+
+          .demand__personBtn
+            button.button.demand__btn Записаться
+
+
+  section.benefit
+    h2 Наши возможности
+
+
+    .benefit__items
+      .benefit__item
+        .benefit__picture
+        .benefit__label Корпоративное обучение
+      .benefit__item
+        .benefit__picture
+        .benefit__label Подготовка к сертификации Microsoft и Cisco
+      .benefit__item
+        .benefit__picture
+        .benefit__label Техническая оснащенность
+
+  include ../common/_contacts.pug
+
+  include ../common/_footer.pug
+

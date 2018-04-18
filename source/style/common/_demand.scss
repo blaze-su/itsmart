@@ -1,0 +1,332 @@
+.demand {
+  background: $dark;
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  h2 {
+    color: $white;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    color: $white;
+  }
+
+  &__case {
+    @extend .case;
+  }
+
+  &__form {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    @include respond-to("tabletPortrait") {
+      flex-direction: column;
+    }
+
+    @include respond-to("phablet") {
+      margin-left: -25px;
+      margin-right: -25px;
+    }
+  }
+
+  &__field {
+    margin-bottom: 40px;
+
+    &Item {
+      margin: 10px 0;
+    }
+
+    &Title {
+      @include ProximaNova("bold");
+      font-size: 18px;
+    }
+
+    &Radio {
+      margin-right: 5px;
+    }
+
+    &Label {
+      @include ProximaNova();
+      font-size: 16px;
+    }
+  }
+
+  &__errors {
+    display: none;
+    @include ProximaNova("light");
+    font-size: 18px;
+    color: red;
+    margin: 20px 0 10px 0;
+  }
+
+  &__success {
+    visibility: hidden;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      color: $dark;
+    }
+  }
+
+  &__detail, &__person {
+    padding: 60px 80px;
+    box-sizing: border-box;
+    background: $white;
+    width: 50%;
+
+    @include respond-to("iPad") {
+      padding: 60px 40px;
+      overflow: hidden;
+    }
+
+    @include respond-to("tabletPortrait") {
+      width: auto;
+    }
+  }
+
+  &__detail {
+    margin-right: 1px;
+
+    @include respond-to("tabletPortrait") {
+      margin: 0 0 1px 0;
+    }
+  }
+
+  &__title {
+    @include ProximaNova("bold");
+    font-size: 36px;
+    color: $dark;
+    margin-bottom: 40px;
+  }
+
+  &__tabs {
+    display: flex;
+    position: relative;
+    margin-bottom: 40px;
+
+    &:before {
+      position: absolute;
+      content: " ";
+      bottom: 0;
+      left: -80px;
+      right: -80px;
+      background: $blue;
+      height: 1px;
+      z-index: 0;
+    }
+  }
+
+  &__tab {
+    box-sizing: border-box;
+    border: 1px solid $blue;
+    padding: 15px 40px;
+    @include ProximaNova();
+    font-size: 24px;
+    color: $dark;
+    text-align: center;
+    background: $blue;
+    cursor: pointer;
+
+    &:hover {
+      background: $pink;
+    }
+
+    &__active {
+      background: $white;
+      border-bottom-color: $white;
+      z-index: 10;
+    }
+
+    @include respond-to("phablet") {
+      width: 50%;
+    }
+  }
+
+  &__course {
+    padding-top: 50px;
+
+    &Item {
+      margin-bottom: 20px;
+    }
+
+    &label {
+      @include ProximaNova();
+      font-size: 24px;
+      color: $dark;
+    }
+  }
+
+  &__discountCount {
+    @include HelveticaNeue();
+    font-size: 36px;
+    color: rgba($dark,0.25);
+  }
+
+  &__input {
+    @extend .input;
+    display: block;
+    padding: 20px 20px;
+    width: 100%;
+    max-width: 340px;
+    border: 1px solid $light;
+    margin-bottom: 20px;
+
+    @include respond-to("phablet") {
+      box-sizing: border-box;
+    }
+  }
+
+  &__agreement {
+    position: relative;
+    padding-left: 20px;
+    @include ProximaNova("light");
+    font-size: 18px;
+    color: $greyLight;
+    max-width: 490px;
+
+    &Checkbox {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+
+  &__conditions {
+    &Item {
+      margin-bottom: 80px;
+      display: flex;
+      align-items: center;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    &Image {
+      height: 100px;
+      width: 100px;
+      min-width: 100px;
+      background: $greyLight;
+      border-radius: 50%;
+      margin-right: 40px;
+    }
+
+    &Label {
+      @include ProximaNova();
+      font-size: 24px;
+      color:$dark;
+    }
+  }
+
+  &__payment {
+    padding: 40px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background: $white;
+    margin-top: 1px;
+
+    @include respond-to("iPad") {
+      padding: 40px 40px;
+    }
+
+    @include respond-to("tabletPortrait") {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @include respond-to("phablet") {
+      margin-left: -25px;
+      margin-right: -25px;
+    }
+
+    &Summ,
+    &Option,
+    &Btn {
+      width: 33.3%;
+
+      @include respond-to("tabletPortrait") {
+       margin-bottom: 40px;
+       width: auto;
+      }
+    }
+
+    span {
+      display: block;
+      @include ProximaNova();
+      font-size: 24px;
+      margin-bottom: 20px;
+
+      @include respond-to("tabletPortrait") {
+        margin-bottom: 10pxf;
+      }
+    }
+
+    b {
+      @include HelveticaNeue();
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+
+    &Option {
+      span {
+        text-align: center;
+
+        @include respond-to("tabletPortrait") {
+          text-align: left;
+        }
+      }
+    }
+
+    &OptionItems {
+      display: flex;
+      justify-content: center;
+    }
+
+    &OptionItem {
+      @include ProximaNova("light");
+      font-size: 17px;
+      color: $dark;
+      padding: 10px 20px;
+      border: 1px solid $blue;
+      background: $blue;
+
+      &__active {
+        background: $white;
+
+      }
+    }
+
+    &Btn {
+      text-align: right;
+      margin-bottom: 0 !important;
+    }
+  }
+
+  &__btn {
+    box-sizing: inherit;
+    min-width: 180px;
+    text-align: left;
+  }
+
+  &__personBtn {
+    margin-top: 40px;
+  }
+
+
+
+
+}

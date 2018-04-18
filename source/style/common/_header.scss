@@ -1,0 +1,165 @@
+@import "_color";
+
+.header {
+  position: relative;
+  z-index: 100;
+  background: $darkBlue;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    margin-left: 25px;
+
+    img {
+      width: 220px;
+      vertical-align: middle;
+    }
+  }
+}
+
+.headerNav {
+  position: relative;
+  min-height: 100px;
+  width: 100%;
+  text-align: right;
+
+
+  &__link {
+    display: inline-block;
+    line-height: 100px;
+    margin: 0 40px;
+
+    @include respond-to("iPad") {
+      display: none;
+    }
+
+
+    @include ProximaNova("light");
+    font-size: 20px;
+    color: $blue;
+    text-decoration: none;
+  }
+
+  &__enter {
+    display: inline-block;
+    line-height: 100px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+    color: #505d73;
+    background: #1a1e25;
+
+    @include respond-to("iPad") {
+      display: none;
+    }
+
+    span {
+      display: none;
+    }
+
+
+  }
+
+  &__button {
+    position: absolute;
+    top: 37px;
+    right: 30px;
+    width: 40px;
+    height: 5px;
+    background: #505d73;
+    display: none;
+    border: none;
+    outline: none;
+
+    @include respond-to("iPad") {
+      display: block;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 0;
+      height: 5px;
+      width: 40px;
+      background: #505d73;
+    }
+
+    &:after{
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      height: 5px;
+      width: 40px;
+      background: #505d73;
+    }
+  }
+}
+
+.headerNav__mobile {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  right: -35px;
+  z-index: 100;
+  text-align: left;
+}
+
+.headerNav__mobile .headerNav {
+  &__button {
+    right: auto;
+    left: 0;
+    top: 10px;
+  }
+
+
+  &__link {
+    @include ProximaNova("light");
+    font-size: 20px;
+    color: $blue;
+    display: block;
+    line-height: normal;
+
+    padding: 12px 34px;
+    background: #1a1e25;
+    margin-right: 0;
+    margin-bottom: 2px;
+  }
+
+  &__enter {
+    position: relative;
+    display: block;
+    margin: 0 0 0 40px;
+    line-height: normal;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 12px 34px;
+    background: #1a1e25;
+    text-align: left;
+    color: #505d73;
+    width: inherit;
+
+    i {
+      position: absolute;
+      top: 14px;
+    }
+
+    span {
+      display: inline-block;
+      @include ProximaNova("light");
+      font-size: 20px;
+      color: $blue;
+      text-decoration: none;
+      padding-left: 24px;
+      color: #505d73;
+    }
+  }
+}
+

@@ -1,0 +1,12 @@
+.gallery {
+  @extend .case;
+
+  @include respond-to("phablet") {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__items {
+    display: block;
+  }
+}

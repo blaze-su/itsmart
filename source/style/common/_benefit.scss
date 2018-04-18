@@ -1,0 +1,62 @@
+.benefit {
+  @extend .case;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &__items {
+    display: flex;
+
+    @include respond-to("phablet") {
+      display: block;
+    }
+  }
+
+
+  &__item {
+    width: 33.3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond-to("phablet") {
+      width: auto;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__picture {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 30px;
+
+    @include respond-to("phablet") {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__label {
+    @include ProximaNova();
+    font-size: 24px;
+    color: $dark;
+    max-width: 240px;
+    text-align: center;
+  }
+
+  &__description {
+    @include ProximaNova("light");
+    font-size: 18px;
+    line-height: 1.4em;
+    color: $dark;
+    margin-top: 15px;
+    max-width: 318px;
+    text-align: center;
+
+    @include respond-to("iPad") {
+      padding: 0 10px;
+    }
+  }
+
+
+
+
+}

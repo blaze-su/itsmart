@@ -1,0 +1,39 @@
+.events {
+  @extend .case;
+  padding-top: 25px;
+
+
+  &__slider {
+    position: relative;
+
+    @include respond-to("phablet") {
+      margin: 0 -35px;
+    }
+
+  }
+
+  &__items {
+    @include respond-to("phablet") {
+      display: block;
+    }
+  }
+
+  &__item {
+    display: block;
+    img {
+      width: 100%;
+      max-width: 630px;
+      max-height: 430px;
+    }
+/*
+    @include respond-to("phablet") {
+      width: 100%;
+      height: auto;
+      min-height: 200px;
+    }
+    */
+  }
+}
+
+
+

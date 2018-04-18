@@ -1,0 +1,75 @@
+extends ../_template
+
+block variables
+  - var title = 'Мероприятия'
+
+block content
+  include ../common/_header.pug
+  include ../common/_bredcrumbs.pug
+
+  .eventsDetail
+    h1.eventsDetail__title Бесплатный мастер-класс “Робототехника  и технологии будущего”
+
+    .eventsDetail__case
+      article.eventsDetail__article
+        .eventsDetail__image
+
+        section.eventsDetail__description
+          p Интересный и захватывающий мир роботов, киборгов и всевозможных гаджетов не на шутку увлекает вашего ребенка? А создание своего робота все еще остается мечтой? Похоже, самое время исполнить ее и создать собственного механического друга! Приглашаем вас на наш мастер-класс, где каждый ребенок научится управлять настоящим роботом и примет участие в робо-соревнованиях! Эти механические ребята покажут, у кого больше силы и ловкости!
+
+          p
+            b Вы узнаетете:
+                ul
+                  li Как изменится будущее с квадрокоптерами.
+                  li Можно ли создать из обычной игрушки робота?
+                  li В каких отраслях давно не могут обойтись без роботов?
+                  li Секреты, которые нужно знать конструкторам роботов.
+                  li Факты о робототехнике, которые Вас сильно удивят.
+                  li Причины, почему робототехника полезна для вашего ребенка.
+
+          p
+            b И самое интересное — это:
+            ul
+              li Соревнование роботов.
+              li И, конечно же, награждение победителей!
+
+
+      aside.eventsDetail__aside
+        .eventsDetail__info
+          .eventsDetail__infoItem.eventsDetail__date
+            i.fa.fa-calendar.eventsDetail__icon
+            span 14 Ноября 2017
+          .eventsDetail__infoItem.eventsDetail__time
+            i.fa.fa-clock-o.eventsDetail__icon
+            span 13:00
+          .eventsDetail__infoItem.eventsDetail__price
+            i.fa.fa-rub.eventsDetail__icon
+            span Вход свободный
+          .eventsDetail__infoItem.eventsDetail__address
+            i.fa.fa-map-marker.eventsDetail__icon
+            span ул. Северная 490, офис 701 (7 этаж)
+
+        .eventsDetail__countdown
+          .eventsDetail__countdownTitle До начала осталось
+          .eventsDetail__countdownItems
+            .eventsDetail__countdownItem
+              .eventsDetail__countdownCount.eventsDetail__countdownDays 00
+              .eventsDetail__countdownLabel Дней
+            .eventsDetail__countdownItem
+              .eventsDetail__countdownCount.eventsDetail__countdownHours 00
+              .eventsDetail__countdownLabel Часов
+            .eventsDetail__countdownItem
+              .eventsDetail__countdownCount.eventsDetail__countdownMinutes 00
+              .eventsDetail__countdownLabel Минут
+            .eventsDetail__countdownItem
+              .eventsDetail__countdownCount.eventsDetail__countdownSeconds 00
+              .eventsDetail__countdownLabel Секунд
+
+        .eventsDetail__registered
+          .eventsDetail__registeredTitle Зарегистрировалось уже:
+          .eventsDetail__registeredCount 35
+          .eventsDetail__registeredLabel человек
+
+  include ../common/_registration.pug
+  include ../common/_footer.pug
+

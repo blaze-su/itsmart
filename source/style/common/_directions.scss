@@ -1,0 +1,52 @@
+.directions {
+  @extend .case;
+
+
+  height: 340px;
+  margin-top: -140px;
+  display: flex;
+  align-content: stretch;
+
+  @include respond-to("tabletPortrait") {
+    padding: 0;
+  }
+
+  @include respond-to("phablet") {
+    flex-direction: column;
+    height: auto;
+  }
+
+  &__items {
+    background: $white;
+    width: 25%;
+    padding: 75px 0;
+    text-align: center;
+
+
+    @include respond-to("iPad") {
+      width: 50%;
+    }
+
+    @include respond-to("phablet") {
+      padding: 20px 0;
+      width: 100%;
+    }
+  }
+
+  &__picture {
+    display: inline-block;
+    height: 136px;
+    width: 150px;
+    margin: 0 0 25px 0;
+  }
+
+  &__title {
+    display: block;
+    @include ProximaNova();
+    font-size: 24px;
+    color: $dark;
+  }
+
+
+
+}

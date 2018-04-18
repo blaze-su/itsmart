@@ -1,0 +1,261 @@
+.eventsDetail {
+  @extend .case;
+
+  &__title {
+    @include ProximaNova("bold");
+    font-size: 36px;
+    color: $dark;
+    max-width: 750px;
+  }
+
+  &__case {
+    display: flex;
+
+    @include respond-to("iPad") {
+      margin-right: 60px;
+    }
+
+    @include respond-to("tabletPortrait") {
+      flex-direction: column-reverse;
+      margin: 0;
+    }
+  }
+
+  &__article {
+    margin-right: 80px;
+
+    @include respond-to("iPad") {
+      margin-right: 60px;
+    }
+
+    @include respond-to("tabletPortrait") {
+      margin: 0;
+    }
+  }
+
+  &__image {
+    img {
+      width: 100%;
+    }
+
+    @include respond-to("phablet") {
+      margin-right: -35px;
+      margin-left: -35px;
+    }
+  }
+
+  p {
+    @include ProximaNova();
+    font-size: 18px;
+    color: $dark;
+    line-height: 1.6em;
+  }
+
+  b {
+    @include ProximaNova("bold");
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    @include ProximaNova();
+    font-size: 18px;
+    color: $dark;
+    line-height: 1.6em;
+  }
+
+
+  &__aside {
+    box-sizing: border-box;
+    width: 450px;
+    min-width: 450px;
+
+    @include respond-to("iPad") {
+      min-width: inherit;
+      width: 300px;
+    }
+
+    @include respond-to("tabletPortrait") {
+      margin: 0 -40px;
+      display: flex;
+      width: auto;
+    }
+
+    @include respond-to("phablet") {
+      display: block;
+      margin: 0 -35px;
+    }
+
+  }
+
+  &__info {
+    padding: 50px 60px;
+    margin-bottom: 20px;
+    @include ProximaNova("semibild");
+    background: $blue;
+
+    @include respond-to("iPad") {
+      padding: 40px 35px 25px;
+    }
+
+    @include respond-to("phablet") {
+      margin-bottom: 1px;
+    }
+
+    &Item {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 20px;
+    }
+
+    span {
+      font-size: 24px;
+      color: $dark;
+      line-height: 1.4em;
+    }
+  }
+
+  &__icon {
+    font-size: 22px;
+    position: absolute;
+    top: 4px;
+    left: 0;
+  }
+
+  &__countdown {
+    padding: 50px 40px;
+    margin-bottom: 20px;
+    @include ProximaNova("semibild");
+    background: $blue;
+
+    @include respond-to("iPad") {
+      padding: 40px 35px;
+    }
+
+    @include respond-to("phablet") {
+      margin-bottom: 1px;
+    }
+
+    &Items {
+      display: flex;
+      justify-content: space-between;
+
+      @include respond-to("iPad") {
+        flex-direction: column;
+      }
+
+      @include respond-to("tabletPortrait") {
+        flex-direction: row;
+      }
+
+      @include respond-to("phablet") {
+        flex-direction: row;
+      }
+
+      @include respond-to("iPhone") {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    &Item {
+      @include respond-to("iPad") {
+        display: flex;
+        align-items: center;
+      }
+
+      @include respond-to("tabletPortrait") {
+        display: block;
+      }
+
+      @include respond-to("iPhone") {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 50%;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+    }
+
+
+    &Title {
+      @include ProximaNova("semibold");
+      font-size: 24px;
+      color: $dark;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    &Count {
+      width: 80px;
+      height: 80px;
+      border: 1px solid $dark;
+      background: $white;
+      @include ProximaNova("bold");
+      font-size: 36px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include respond-to("iPad") {
+        margin: 5px 10px 5px 0;
+      }
+
+      @include respond-to("iPhone") {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+
+    &Label {
+      @include ProximaNova();
+      font-size: 24px;
+      color: $dark;
+      text-align: center;
+    }
+  }
+
+  &__registered {
+    padding: 50px 40px;
+    margin-bottom: 20px;
+    @include ProximaNova("semibild");
+    background: $blue;
+    text-align: center;
+
+    @include respond-to("tabletPortrait") {
+      display: none;
+    }
+
+    @include respond-to("phablet") {
+      display: block;
+      margin-bottom: 1px;
+    }
+
+    &Title {
+      @include ProximaNova("semibold");
+      font-size: 24px;
+      color: $dark;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    &Count {
+      display: inline-block;
+      @include ProximaNova("extraBold");
+      font-size: 120px;
+      color: $blueLight;
+    }
+
+    &Label {
+      display: inline-block;
+      @include ProximaNova();
+      font-size: 20px;
+      color: $dark;
+    }
+  }
+}

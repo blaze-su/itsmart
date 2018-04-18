@@ -1,0 +1,59 @@
+.teachers {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  @extend .case;
+  position: relative;
+
+  &__slider {
+    position: relative;
+  }
+
+  &__item {
+    display: flex;
+    border: 1px solid $light;
+
+    @include respond-to("phablet") {
+      flex-direction: column;
+    }
+  }
+
+  &__case {
+    padding: 60px 80px;
+    width: 100%;
+    box-sizing: border-box;
+
+    @include respond-to("phablet") {
+      padding: 40px;
+    }
+  }
+
+  &__image {
+    height: 490px;
+    width: 490px;
+    min-width: 490px;
+
+    @include respond-to("tabletPortrait") {
+      width: 50%;
+      min-width: inherit;
+      height: auto;
+    }
+
+    @include respond-to("phablet") {
+      width: inherit;
+      height: 320px;
+    }
+  }
+
+  &__name {
+    @include ProximaNova("bold");
+    font-size: 36px;
+    color: $dark;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    @include ProximaNova();
+    font-size: 24px;
+    color: $dark;
+  }
+}
